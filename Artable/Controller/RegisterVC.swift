@@ -55,17 +55,30 @@ class RegisterVC: UIViewController {
     @IBAction func registerBtnClicked(_ sender: Any) {
         guard let email = emailTxt.text, email.isNotEmpty ,
               let username = usernameTxt.text, username.isNotEmpty ,
-              let password = passwordTxt.text , password.isNotEmpty else {return}
+              let password = passwordTxt.text , password.isNotEmpty else {
+            simpleAlert(title: "Error", message: "Please fill out all fields")
+            return
+        }
+        
+        guard let confirmPass = confirmPassTxt.text , confirmPass == password else {
+            simpleAlert(title: "Error", message: "Passwords, do not match")
+            return
+        }
         
         activitiIndicator.startAnimating()
         
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        guard let authUser = Auth.auth().currentUser else {return}
+        
+        authUser.link(with: credential) { result, error in
             if let error = error {
                 debugPrint(error)
+                self.handleFireAuthError(error: error)
                 return
             }
+            
             self.activitiIndicator.stopAnimating()
-            print("Succesfully register new user")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
