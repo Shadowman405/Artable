@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="gTV-IL-0wX" customClass="CategoryCell" customModule="Artable" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="animal_2" translatesAutoresizingMaskIntoConstraints="NO" id="9QQ-mB-GMZ">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cP2-Ul-tco">
+                        <rect key="frame" x="8" y="169" width="134" height="23"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="cP2-Ul-tco" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="21h-8B-Hcl"/>
+                <constraint firstAttribute="trailing" secondItem="cP2-Ul-tco" secondAttribute="trailing" constant="8" id="5oF-xp-gTf"/>
+                <constraint firstItem="9QQ-mB-GMZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xrv-Pn-jZd"/>
+                <constraint firstAttribute="bottom" secondItem="cP2-Ul-tco" secondAttribute="bottom" constant="8" id="dqA-i0-eW7"/>
+                <constraint firstAttribute="trailing" secondItem="9QQ-mB-GMZ" secondAttribute="trailing" id="l7Q-vD-Ino"/>
+                <constraint firstItem="9QQ-mB-GMZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sN6-VI-MIh"/>
+                <constraint firstAttribute="bottom" secondItem="9QQ-mB-GMZ" secondAttribute="bottom" constant="8" id="zTt-z9-elE"/>
+            </constraints>
+            <size key="customSize" width="320" height="434"/>
+            <connections>
+                <outlet property="categoryImg" destination="9QQ-mB-GMZ" id="RxA-Xh-tnr"/>
+                <outlet property="categoryLbl" destination="cP2-Ul-tco" id="62R-ML-rmf"/>
+            </connections>
+            <point key="canvasLocation" x="223.18840579710147" y="90.401785714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="animal_2" width="3150" height="2110"/>
+    </resources>
+</document>

@@ -33,6 +33,12 @@
 		BF9C7C7926DAB7070044EB60 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C7726DAB7070044EB60 /* ForgotPasswordVC.xib */; };
 		BF9C7C7B26DABFBE0044EB60 /* Firebase + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C7A26DABFBE0044EB60 /* Firebase + Utils.swift */; };
 		BF9C7C7C26DAC08A0044EB60 /* Firebase + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C7A26DABFBE0044EB60 /* Firebase + Utils.swift */; };
+		BF9C7C8026DAF8920044EB60 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C7F26DAF8920044EB60 /* Category.swift */; };
+		BF9C7C8126DAF8920044EB60 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C7F26DAF8920044EB60 /* Category.swift */; };
+		BF9C7C8426DAF94E0044EB60 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8226DAF94E0044EB60 /* CategoryCell.swift */; };
+		BF9C7C8526DAF94E0044EB60 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8226DAF94E0044EB60 /* CategoryCell.swift */; };
+		BF9C7C8626DAF94E0044EB60 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */; };
+		BF9C7C8726DAF94E0044EB60 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +71,9 @@
 		BF9C7C7626DAB7070044EB60 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		BF9C7C7726DAB7070044EB60 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		BF9C7C7A26DABFBE0044EB60 /* Firebase + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase + Utils.swift"; sourceTree = "<group>"; };
+		BF9C7C7F26DAF8920044EB60 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BF9C7C8226DAF94E0044EB60 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		D0F169002CBAEF4219E12F7F /* Pods_Artable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D323923EC0F3595123EB2B10 /* Pods-Artable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.debug.xcconfig"; path = "Target Support Files/Pods-Artable/Pods-Artable.debug.xcconfig"; sourceTree = "<group>"; };
 		F8011DAB25BA7A3D6A2AB798 /* Pods-ArtableADmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableADmin.release.xcconfig"; path = "Target Support Files/Pods-ArtableADmin/Pods-ArtableADmin.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,7 +145,6 @@
 			children = (
 				BF9C7C7526DAB6E20044EB60 /* XIBs */,
 				BF9C7C6826D93D670044EB60 /* Storyboards */,
-				BF9C7C6726D93D610044EB60 /* Model */,
 				BF9C7C6626D93D5B0044EB60 /* View */,
 				BF9C7C6526D93D530044EB60 /* Controller */,
 				BF4C1FEA26D700DB005B9429 /* SceneDelegate.swift */,
@@ -166,6 +174,8 @@
 		BF4C201426D70165005B9429 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BF9C7C8826DAF9640044EB60 /* XIBs */,
+				BF9C7C6726D93D610044EB60 /* Model */,
 				BF9C7C7226D99E340044EB60 /* View */,
 				BF9C7C6D26D9970A0044EB60 /* Utils */,
 				BF4C1FF126D700E5005B9429 /* Assets.xcassets */,
@@ -194,6 +204,7 @@
 		BF9C7C6726D93D610044EB60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF9C7C7F26DAF8920044EB60 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9C7C7326D99E450044EB60 /* RoundedViews.swift */,
+				BF9C7C8226DAF94E0044EB60 /* CategoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +240,14 @@
 			children = (
 				BF9C7C7626DAB7070044EB60 /* ForgotPasswordVC.swift */,
 				BF9C7C7726DAB7070044EB60 /* ForgotPasswordVC.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
+		BF9C7C8826DAF9640044EB60 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -315,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4C1FF526D700E5005B9429 /* LaunchScreen.storyboard in Resources */,
+				BF9C7C8626DAF94E0044EB60 /* CategoryCell.xib in Resources */,
 				BF4C1FF226D700E5005B9429 /* Assets.xcassets in Resources */,
 				BF3774B326D839B7007A6125 /* GoogleService-Info.plist in Resources */,
 				BF4C1FF026D700DB005B9429 /* Main.storyboard in Resources */,
@@ -327,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9C7C8726DAF94E0044EB60 /* CategoryCell.xib in Resources */,
 				BF4C200F26D70133005B9429 /* LaunchScreen.storyboard in Resources */,
 				BF4C201526D7018F005B9429 /* Assets.xcassets in Resources */,
 				BF3774B526D844AD007A6125 /* GoogleService-Info-2.plist in Resources */,
@@ -432,6 +454,8 @@
 				BF9C7C6A26D93DC10044EB60 /* LoginVC.swift in Sources */,
 				BF9C7C7B26DABFBE0044EB60 /* Firebase + Utils.swift in Sources */,
 				BF9C7C6C26D93DDC0044EB60 /* RegisterVC.swift in Sources */,
+				BF9C7C8026DAF8920044EB60 /* Category.swift in Sources */,
+				BF9C7C8426DAF94E0044EB60 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,9 +464,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4C200726D7012E005B9429 /* ViewController.swift in Sources */,
+				BF9C7C8126DAF8920044EB60 /* Category.swift in Sources */,
 				BF4C200326D7012E005B9429 /* AppDelegate.swift in Sources */,
 				BF9C7C7C26DAC08A0044EB60 /* Firebase + Utils.swift in Sources */,
 				BF4C200526D7012E005B9429 /* SceneDelegate.swift in Sources */,
+				BF9C7C8526DAF94E0044EB60 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,8 +15,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="SK0-MM-k7E">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J88-Ie-ya8">
+                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KXy-Ry-OSG">
+                                    <size key="itemSize" width="144" height="194"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rgn-1D-AMm">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SK0-MM-k7E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="028-5j-PGV"/>
+                            <constraint firstItem="J88-Ie-ya8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="H5S-rl-N33"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J88-Ie-ya8" secondAttribute="trailing" constant="20" id="IgJ-AE-E6G"/>
+                            <constraint firstItem="J88-Ie-ya8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="URG-4Z-ILn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SK0-MM-k7E" secondAttribute="trailing" id="VKt-4j-i2D"/>
+                            <constraint firstItem="rgn-1D-AMm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z4e-4S-d8P"/>
+                            <constraint firstItem="rgn-1D-AMm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aP9-fS-kpf"/>
+                            <constraint firstAttribute="bottom" secondItem="SK0-MM-k7E" secondAttribute="bottom" id="caD-mJ-wsw"/>
+                            <constraint firstItem="SK0-MM-k7E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="txN-Ur-wum"/>
+                            <constraint firstAttribute="bottom" secondItem="J88-Ie-ya8" secondAttribute="bottom" id="wZt-7a-eze"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Isi-n0-72e">
                         <barButtonItem key="leftBarButtonItem" title="Login" id="DJ4-ni-y2I">
@@ -26,6 +58,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="rgn-1D-AMm" id="8Ya-pc-2HC"/>
+                        <outlet property="collectionView" destination="J88-Ie-ya8" id="KXA-CP-e1l"/>
                         <outlet property="loginOutBtn" destination="DJ4-ni-y2I" id="p33-CO-2K3"/>
                     </connections>
                 </viewController>
@@ -53,8 +87,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_cat3" width="1500" height="1875"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
