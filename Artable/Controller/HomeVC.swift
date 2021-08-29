@@ -18,6 +18,7 @@ class HomeVC: UIViewController {
     
 
     var categories = [Category]()
+    var selectedCategory: Category!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +28,7 @@ class HomeVC: UIViewController {
                                      imgURL: "https://images.unsplash.com/photo-1571391733814-15ac29ac3544?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Ym9hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
                                      isActive: true,
                                      timeStamp: Timestamp())
-        let category2 = Category.init(name: "Animal",
-                                     id: "random",
-                                     imgURL: "https://images.unsplash.com/photo-1570741066052-817c6de995c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c25ha2V8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
-                                     isActive: true,
-                                     timeStamp: Timestamp())
         categories.append(category)
-        categories.append(category2)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -105,10 +100,24 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource , UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
-        let cellWidth = (width - 50) / 2
+        let cellWidth = (width - 30) / 2
         let cellHeight = cellWidth * 1.5
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
 
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategory = categories[indexPath.item]
+        performSegue(withIdentifier: Segues.toProducts, sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.toProducts {
+            if let destination = segue.destination as? ProductsVC {
+                destination.category = selectedCategory
+            }
+        }
+    }
 }

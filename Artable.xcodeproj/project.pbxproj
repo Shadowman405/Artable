@@ -39,6 +39,14 @@
 		BF9C7C8526DAF94E0044EB60 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8226DAF94E0044EB60 /* CategoryCell.swift */; };
 		BF9C7C8626DAF94E0044EB60 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */; };
 		BF9C7C8726DAF94E0044EB60 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */; };
+		BF9C7C8A26DC29E20044EB60 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8926DC29E20044EB60 /* ProductsVC.swift */; };
+		BF9C7C8B26DC29EC0044EB60 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8926DC29E20044EB60 /* ProductsVC.swift */; };
+		BF9C7C8D26DC2A4D0044EB60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8C26DC2A4D0044EB60 /* Product.swift */; };
+		BF9C7C8E26DC2A4D0044EB60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8C26DC2A4D0044EB60 /* Product.swift */; };
+		BF9C7C9126DC2B060044EB60 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8F26DC2B060044EB60 /* ProductCell.swift */; };
+		BF9C7C9226DC2B060044EB60 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C8F26DC2B060044EB60 /* ProductCell.swift */; };
+		BF9C7C9326DC2B060044EB60 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C9026DC2B060044EB60 /* ProductCell.xib */; };
+		BF9C7C9426DC2B060044EB60 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C9026DC2B060044EB60 /* ProductCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +82,10 @@
 		BF9C7C7F26DAF8920044EB60 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BF9C7C8226DAF94E0044EB60 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		BF9C7C8926DC29E20044EB60 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
+		BF9C7C8C26DC2A4D0044EB60 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BF9C7C8F26DC2B060044EB60 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		BF9C7C9026DC2B060044EB60 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		D0F169002CBAEF4219E12F7F /* Pods_Artable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D323923EC0F3595123EB2B10 /* Pods-Artable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.debug.xcconfig"; path = "Target Support Files/Pods-Artable/Pods-Artable.debug.xcconfig"; sourceTree = "<group>"; };
 		F8011DAB25BA7A3D6A2AB798 /* Pods-ArtableADmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableADmin.release.xcconfig"; path = "Target Support Files/Pods-ArtableADmin/Pods-ArtableADmin.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 				BF9C7C6B26D93DDC0044EB60 /* RegisterVC.swift */,
 				BF4C1FE826D700DB005B9429 /* AppDelegate.swift */,
 				BF4C1FEC26D700DB005B9429 /* HomeVC.swift */,
+				BF9C7C8926DC29E20044EB60 /* ProductsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9C7C7F26DAF8920044EB60 /* Category.swift */,
+				BF9C7C8C26DC2A4D0044EB60 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +245,7 @@
 			children = (
 				BF9C7C7326D99E450044EB60 /* RoundedViews.swift */,
 				BF9C7C8226DAF94E0044EB60 /* CategoryCell.swift */,
+				BF9C7C8F26DC2B060044EB60 /* ProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9C7C8326DAF94E0044EB60 /* CategoryCell.xib */,
+				BF9C7C9026DC2B060044EB60 /* ProductCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -335,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4C1FF526D700E5005B9429 /* LaunchScreen.storyboard in Resources */,
+				BF9C7C9326DC2B060044EB60 /* ProductCell.xib in Resources */,
 				BF9C7C8626DAF94E0044EB60 /* CategoryCell.xib in Resources */,
 				BF4C1FF226D700E5005B9429 /* Assets.xcassets in Resources */,
 				BF3774B326D839B7007A6125 /* GoogleService-Info.plist in Resources */,
@@ -351,6 +368,7 @@
 				BF9C7C8726DAF94E0044EB60 /* CategoryCell.xib in Resources */,
 				BF4C200F26D70133005B9429 /* LaunchScreen.storyboard in Resources */,
 				BF4C201526D7018F005B9429 /* Assets.xcassets in Resources */,
+				BF9C7C9426DC2B060044EB60 /* ProductCell.xib in Resources */,
 				BF3774B526D844AD007A6125 /* GoogleService-Info-2.plist in Resources */,
 				BF4C200A26D7012E005B9429 /* Main.storyboard in Resources */,
 			);
@@ -449,13 +467,16 @@
 				BF4C1FE926D700DB005B9429 /* AppDelegate.swift in Sources */,
 				BF4C1FEB26D700DB005B9429 /* SceneDelegate.swift in Sources */,
 				BF9C7C7426D99E450044EB60 /* RoundedViews.swift in Sources */,
+				BF9C7C8A26DC29E20044EB60 /* ProductsVC.swift in Sources */,
 				BF9C7C7826DAB7070044EB60 /* ForgotPasswordVC.swift in Sources */,
 				BF9C7C7126D99BAF0044EB60 /* Constants.swift in Sources */,
 				BF9C7C6A26D93DC10044EB60 /* LoginVC.swift in Sources */,
 				BF9C7C7B26DABFBE0044EB60 /* Firebase + Utils.swift in Sources */,
 				BF9C7C6C26D93DDC0044EB60 /* RegisterVC.swift in Sources */,
 				BF9C7C8026DAF8920044EB60 /* Category.swift in Sources */,
+				BF9C7C9126DC2B060044EB60 /* ProductCell.swift in Sources */,
 				BF9C7C8426DAF94E0044EB60 /* CategoryCell.swift in Sources */,
+				BF9C7C8D26DC2A4D0044EB60 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,9 +485,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4C200726D7012E005B9429 /* ViewController.swift in Sources */,
+				BF9C7C8E26DC2A4D0044EB60 /* Product.swift in Sources */,
 				BF9C7C8126DAF8920044EB60 /* Category.swift in Sources */,
 				BF4C200326D7012E005B9429 /* AppDelegate.swift in Sources */,
 				BF9C7C7C26DAC08A0044EB60 /* Firebase + Utils.swift in Sources */,
+				BF9C7C8B26DC29EC0044EB60 /* ProductsVC.swift in Sources */,
+				BF9C7C9226DC2B060044EB60 /* ProductCell.swift in Sources */,
 				BF4C200526D7012E005B9429 /* SceneDelegate.swift in Sources */,
 				BF9C7C8526DAF94E0044EB60 /* CategoryCell.swift in Sources */,
 			);

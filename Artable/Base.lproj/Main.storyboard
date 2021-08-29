@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J88-Ie-ya8">
-                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <rect key="frame" x="10" y="88" width="394" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KXy-Ry-OSG">
                                     <size key="itemSize" width="144" height="194"/>
@@ -39,8 +39,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SK0-MM-k7E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="028-5j-PGV"/>
-                            <constraint firstItem="J88-Ie-ya8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="H5S-rl-N33"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J88-Ie-ya8" secondAttribute="trailing" constant="20" id="IgJ-AE-E6G"/>
+                            <constraint firstItem="J88-Ie-ya8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="H5S-rl-N33"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J88-Ie-ya8" secondAttribute="trailing" constant="10" id="IgJ-AE-E6G"/>
                             <constraint firstItem="J88-Ie-ya8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="URG-4Z-ILn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SK0-MM-k7E" secondAttribute="trailing" id="VKt-4j-i2D"/>
                             <constraint firstItem="rgn-1D-AMm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z4e-4S-d8P"/>
@@ -61,11 +61,50 @@
                         <outlet property="activityIndicator" destination="rgn-1D-AMm" id="8Ya-pc-2HC"/>
                         <outlet property="collectionView" destination="J88-Ie-ya8" id="KXA-CP-e1l"/>
                         <outlet property="loginOutBtn" destination="DJ4-ni-y2I" id="p33-CO-2K3"/>
+                        <segue destination="h94-VI-A9y" kind="show" identifier="toProductsVC" id="uq1-YF-Tue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="73.660714285714278"/>
+        </scene>
+        <!--ProductsVC-->
+        <scene sceneID="IDa-V2-hkp">
+            <objects>
+                <viewController id="h94-VI-A9y" customClass="ProductsVC" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lBa-df-Z0X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="0NF-zA-Oc2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PTl-sY-k3F">
+                                <rect key="frame" x="2" y="88" width="410" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aJM-LS-NPj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aJM-LS-NPj" firstAttribute="trailing" secondItem="PTl-sY-k3F" secondAttribute="trailing" constant="2" id="JpT-L5-5bb"/>
+                            <constraint firstItem="0NF-zA-Oc2" firstAttribute="trailing" secondItem="aJM-LS-NPj" secondAttribute="trailing" id="XXo-Bn-UpB"/>
+                            <constraint firstItem="0NF-zA-Oc2" firstAttribute="top" secondItem="aJM-LS-NPj" secondAttribute="top" id="eRk-qz-mis"/>
+                            <constraint firstItem="PTl-sY-k3F" firstAttribute="top" secondItem="aJM-LS-NPj" secondAttribute="top" id="ftc-Qh-Bon"/>
+                            <constraint firstAttribute="bottom" secondItem="0NF-zA-Oc2" secondAttribute="bottom" id="kDX-Jz-p2N"/>
+                            <constraint firstItem="0NF-zA-Oc2" firstAttribute="leading" secondItem="aJM-LS-NPj" secondAttribute="leading" id="lLH-Vf-P7Z"/>
+                            <constraint firstItem="PTl-sY-k3F" firstAttribute="leading" secondItem="aJM-LS-NPj" secondAttribute="leading" constant="2" id="vdY-q1-np9"/>
+                            <constraint firstAttribute="bottom" secondItem="PTl-sY-k3F" secondAttribute="bottom" id="y33-6n-7mb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pav-oE-Mwg"/>
+                    <connections>
+                        <outlet property="tableView" destination="PTl-sY-k3F" id="f2f-b8-dbB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkH-2O-fnY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="74"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lq7-6w-C6M">
