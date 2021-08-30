@@ -19,17 +19,10 @@ class HomeVC: UIViewController {
 
     var categories = [Category]()
     var selectedCategory: Category!
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let category = Category.init(name: "Animal",
-                                     id: "random",
-                                     imgURL: "https://images.unsplash.com/photo-1571391733814-15ac29ac3544?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Ym9hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
-                                     isActive: true,
-                                     timeStamp: Timestamp())
-        categories.append(category)
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
@@ -42,6 +35,9 @@ class HomeVC: UIViewController {
                 }
             }
         }
+        //Get data from cloud - temporary method
+      //  fetchDocument()
+        fetchCollection()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +45,31 @@ class HomeVC: UIViewController {
             loginOutBtn.title = "Logout"
         } else {
             loginOutBtn.title = "Login"
+        }
+    }
+    
+    func fetchCollection () {
+        let collectionReference = db.collection("categories")
+        
+        collectionReference.getDocuments { snap, error in
+            guard let documents = snap?.documents else {return}
+            for document in documents {
+                let data = document.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func fetchDocument() {
+        let docRef = db.collection("categories").document("eiD0N78G6EwdZpCjql8s")
+        
+        docRef.getDocument { snap, error in
+            guard let data = snap?.data() else {return}
+            let newCategory = Category.init(data: data)
+            self.categories.append(newCategory)
+            self.collectionView.reloadData()
         }
     }
     
