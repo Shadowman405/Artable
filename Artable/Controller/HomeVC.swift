@@ -20,24 +20,13 @@ class HomeVC: UIViewController {
     var categories = [Category]()
     var selectedCategory: Category!
     let db = Firestore.firestore()
+    var listener : ListenerRegistration!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
-        
-        if Auth.auth().currentUser == nil {
-            Auth.auth().signInAnonymously { result, error in
-                if let error = error {
-                    debugPrint(error)
-                    Auth.auth().handleFireAuthError(error: error, vc: self)
-                }
-            }
-        }
-        //Get data from cloud - temporary method
-      //  fetchDocument()
-        fetchCollection()
+        setupNavBar()
+        setupCollectionView()
+        setupInitialAnonUser()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -46,33 +35,61 @@ class HomeVC: UIViewController {
         } else {
             loginOutBtn.title = "Login"
         }
+        setCategoriesListener()
     }
     
-    func fetchCollection () {
-        let collectionReference = db.collection("categories")
-        
-        collectionReference.getDocuments { snap, error in
-            guard let documents = snap?.documents else {return}
-            for document in documents {
-                let data = document.data()
-                let newCategory = Category.init(data: data)
-                self.categories.append(newCategory)
+    override func viewWillDisappear(_ animated: Bool) {
+        //turnoff realtime updates when app not active
+        listener.remove()
+        categories.removeAll()
+        collectionView.reloadData()
+    }
+    
+    func setupNavBar() {
+        guard let font = UIFont(name: "futura", size: 26) else {return}
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: font]
+    }
+    
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
+    }
+    
+    func setupInitialAnonUser() {
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously { result, error in
+                if let error = error {
+                    debugPrint(error)
+                    Auth.auth().handleFireAuthError(error: error, vc: self)
+                }
             }
-            self.collectionView.reloadData()
         }
     }
     
-    func fetchDocument() {
-        let docRef = db.collection("categories").document("eiD0N78G6EwdZpCjql8s")
-        
-        docRef.getDocument { snap, error in
-            guard let data = snap?.data() else {return}
-            let newCategory = Category.init(data: data)
-            self.categories.append(newCategory)
-            self.collectionView.reloadData()
-        }
+    func setCategoriesListener() {
+        listener = db.categories.addSnapshotListener({ snap, error in
+            
+            if let error = error {
+                debugPrint(error)
+                return
+            }
+            
+            snap?.documentChanges.forEach({ change in
+                let data = change.document.data()
+                let category = Category.init(data: data)
+                
+                switch change.type {
+                case .added:
+                    self.onDocumentAdded(change: change, category: category)
+                case .modified:
+                    self.onDocumentModified(change: change, category: category)
+                case .removed:
+                    self.onDocumentRemoved(change: change)
+                }
+            })
+        })
     }
-    
     
     fileprivate func presentLoginController() {
         let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
@@ -82,7 +99,6 @@ class HomeVC: UIViewController {
     
     
     @IBAction func loginOutClicked(_ sender: Any) {
-        
         guard let user = Auth.auth().currentUser else {return}
         if user.isAnonymous {
             presentLoginController()
@@ -102,8 +118,9 @@ class HomeVC: UIViewController {
             }
         }
      }
-
 }
+
+// MARK: - Extensions
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -141,4 +158,83 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource , UIColle
             }
         }
     }
+    
+    // Categories changes for VC
+    
+    func onDocumentAdded(change: DocumentChange, category: Category) {
+        let newIndex = Int(change.newIndex)
+        categories.insert(category, at: newIndex)
+        collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
+    }
+
+    func onDocumentModified(change: DocumentChange, category: Category) {
+        if change.newIndex == change.oldIndex {
+            //Item modified but stays on same position
+            let index = Int(change.newIndex)
+            categories[index] = category
+            collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+        } else {
+            //Item should change position
+            let oldIndex = Int(change.oldIndex)
+            let newIndex = Int(change.newIndex)
+            
+            categories.remove(at: oldIndex)
+            categories.insert(category, at: newIndex)
+            collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+        }
+    }
+    
+    func onDocumentRemoved(change: DocumentChange) {
+        let oldIndex = Int(change.oldIndex)
+        categories.remove(at: oldIndex)
+        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
+    }
 }
+
+
+//MARK: - Unused features
+
+
+//    func fetchCollection () {
+//        let collectionReference = db.collection("categories")
+//
+//        listener = collectionReference.addSnapshotListener { snap, error in
+//            guard let documents = snap?.documents else {return}
+//
+//            self.categories.removeAll()
+//            for document in documents {
+//                let data = document.data()
+//                let newCategory = Category.init(data: data)
+//                self.categories.append(newCategory)
+//            }
+//            self.collectionView.reloadData()
+//        }
+    
+//        collectionReference.getDocuments { snap, error in
+//            guard let documents = snap?.documents else {return}
+//            for document in documents {
+//                let data = document.data()
+//                let newCategory = Category.init(data: data)
+//                self.categories.append(newCategory)
+//            }
+//            self.collectionView.reloadData()
+//        }
+//    }
+
+//    func fetchDocument() {
+//        let docRef = db.collection("categories").document("eiD0N78G6EwdZpCjql8s")
+//        listener = docRef.addSnapshotListener { snap, error in
+//            self.categories.removeAll()
+//            guard let data = snap?.data() else {return}
+//            let newCat = Category.init(data: data)
+//            self.categories.append(newCat)
+//            self.collectionView.reloadData()
+//        }
+//
+//        docRef.getDocument { snap, error in
+//            guard let data = snap?.data() else {return}
+//            let newCategory = Category.init(data: data)
+//            self.categories.append(newCategory)
+//            self.collectionView.reloadData()
+//        }
+//    }

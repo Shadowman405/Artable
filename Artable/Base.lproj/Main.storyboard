@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--artable-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,12 +50,16 @@
                             <constraint firstAttribute="bottom" secondItem="J88-Ie-ya8" secondAttribute="bottom" id="wZt-7a-eze"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Isi-n0-72e">
+                    <navigationItem key="navigationItem" title="artable" id="Isi-n0-72e">
                         <barButtonItem key="leftBarButtonItem" title="Login" id="DJ4-ni-y2I">
                             <connections>
                                 <action selector="loginOutClicked:" destination="BYZ-38-t0r" id="NyI-l6-hqi"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="bar_button_cart" id="zxj-9A-wZF"/>
+                            <barButtonItem title="Item" image="bar_button_star" id="gDK-zL-xUr"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="rgn-1D-AMm" id="8Ya-pc-2HC"/>
@@ -114,6 +118,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bUU-m4-vIu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -126,6 +132,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bar_button_cart" width="27" height="24"/>
+        <image name="bar_button_star" width="26" height="26"/>
         <image name="bg_cat3" width="1500" height="1875"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

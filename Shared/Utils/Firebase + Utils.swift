@@ -41,3 +41,10 @@ extension AuthErrorCode {
         }
     }
 }
+
+
+extension Firestore {
+    var categories: Query {
+        return collection("categories").order(by: "timeStamp", descending: true)
+    }
+}
