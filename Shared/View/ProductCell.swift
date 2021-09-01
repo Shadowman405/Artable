@@ -22,6 +22,7 @@ class ProductCell: UITableViewCell {
     
     func configureCell(product: Product) {
         productTitle.text = product.name
+        productPrice.text = "\(product.price)"
         if let url = URL(string: product.imageURL) {
             productImg.kf.setImage(with: url)
         }
