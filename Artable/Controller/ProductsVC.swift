@@ -19,17 +19,6 @@ class ProductsVC: UIViewController {
     var listener: ListenerRegistration!
     
     override func viewDidLoad() {
-        
-//        let product = Product(name: "Nature",
-//                              id: "random",
-//                              category: "Nature",
-//                              price: 24.99,
-//                              productDescription: "Boa - silent king",
-//                              imageURL: "https://images.unsplash.com/photo-1538439907460-1596cafd4eff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHNuYWtlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
-//                              timeStamp: Timestamp(),
-//                              stock: 0)
-//        products.append(product)
-        
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,11 +26,11 @@ class ProductsVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setProductsListener()
+        setupQuery()
     }
     
-    func setProductsListener() {
-        listener = db.products.addSnapshotListener({ snap, error in
+    func setupQuery() {
+        listener = db.products(category: category.id).addSnapshotListener({ snap, error in
             if let error = error {
                 debugPrint(error.localizedDescription)
                 return
@@ -81,6 +70,15 @@ extension ProductsVC: UITableViewDelegate , UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ProductDetailVC()
+        let selectedProduct = products[indexPath.row]
+        vc.product = selectedProduct
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
@@ -94,11 +92,11 @@ extension ProductsVC: UITableViewDelegate , UITableViewDataSource {
     }
 
     func onDocumentModified(change: DocumentChange, product: Product) {
-        if change.newIndex == change.oldIndex {
+        if change.oldIndex == change.newIndex {
             //Item modified but stays on same position
             let index = Int(change.newIndex)
             products[index] = product
-            tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
         } else {
             //Item should change position
             let oldIndex = Int(change.oldIndex)
