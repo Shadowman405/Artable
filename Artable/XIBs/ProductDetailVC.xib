@@ -35,7 +35,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-8q-0hs">
                                         <rect key="frame" x="20" y="20" width="334" height="491"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal_2" translatesAutoresizingMaskIntoConstraints="NO" id="o0q-hK-BJk">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal_2" translatesAutoresizingMaskIntoConstraints="NO" id="o0q-hK-BJk">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="jWr-xT-saz"/>
@@ -80,7 +80,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="v0w-C8-2on"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Keep Shopping">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>

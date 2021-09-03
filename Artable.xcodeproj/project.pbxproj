@@ -19,7 +19,7 @@
 		BF4C1FF526D700E5005B9429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C1FF326D700E5005B9429 /* LaunchScreen.storyboard */; };
 		BF4C200326D7012E005B9429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C200226D7012E005B9429 /* AppDelegate.swift */; };
 		BF4C200526D7012E005B9429 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C200426D7012E005B9429 /* SceneDelegate.swift */; };
-		BF4C200726D7012E005B9429 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C200626D7012E005B9429 /* ViewController.swift */; };
+		BF4C200726D7012E005B9429 /* AdminHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C200626D7012E005B9429 /* AdminHomeVC.swift */; };
 		BF4C200A26D7012E005B9429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C200826D7012E005B9429 /* Main.storyboard */; };
 		BF4C200F26D70133005B9429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C200D26D70133005B9429 /* LaunchScreen.storyboard */; };
 		BF4C201526D7018F005B9429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4C1FF126D700E5005B9429 /* Assets.xcassets */; };
@@ -49,6 +49,14 @@
 		BF9C7C9426DC2B060044EB60 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7C9026DC2B060044EB60 /* ProductCell.xib */; };
 		BFB5E03526E15FBE00E09BA8 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E03326E15FBE00E09BA8 /* ProductDetailVC.swift */; };
 		BFB5E03626E15FBE00E09BA8 /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB5E03426E15FBE00E09BA8 /* ProductDetailVC.xib */; };
+		BFB5E03726E2C3F000E09BA8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C1FEC26D700DB005B9429 /* HomeVC.swift */; };
+		BFB5E03826E2C4FF00E09BA8 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C7326D99E450044EB60 /* RoundedViews.swift */; };
+		BFB5E03926E2C51400E09BA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C7026D99BAF0044EB60 /* Constants.swift */; };
+		BFB5E03A26E2C51A00E09BA8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C6E26D9971E0044EB60 /* Extensions.swift */; };
+		BFB5E03B26E2C53000E09BA8 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E03326E15FBE00E09BA8 /* ProductDetailVC.swift */; };
+		BFB5E03C26E2C60C00E09BA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3774B226D839B7007A6125 /* GoogleService-Info.plist */; };
+		BFB5E03D26E2C60F00E09BA8 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3774B426D844AD007A6125 /* GoogleService-Info-2.plist */; };
+		BFB5E03F26E2C72C00E09BA8 /* AddEditCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E03E26E2C72C00E09BA8 /* AddEditCategoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +76,7 @@
 		BF4C200026D7012E005B9429 /* ArtableADmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtableADmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C200226D7012E005B9429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF4C200426D7012E005B9429 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF4C200626D7012E005B9429 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF4C200626D7012E005B9429 /* AdminHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeVC.swift; sourceTree = "<group>"; };
 		BF4C200926D7012E005B9429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF4C200E26D70133005B9429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF4C201026D70133005B9429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 		BF9C7C9026DC2B060044EB60 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		BFB5E03326E15FBE00E09BA8 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		BFB5E03426E15FBE00E09BA8 /* ProductDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailVC.xib; sourceTree = "<group>"; };
+		BFB5E03E26E2C72C00E09BA8 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
 		D0F169002CBAEF4219E12F7F /* Pods_Artable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D323923EC0F3595123EB2B10 /* Pods-Artable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.debug.xcconfig"; path = "Target Support Files/Pods-Artable/Pods-Artable.debug.xcconfig"; sourceTree = "<group>"; };
 		F8011DAB25BA7A3D6A2AB798 /* Pods-ArtableADmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableADmin.release.xcconfig"; path = "Target Support Files/Pods-ArtableADmin/Pods-ArtableADmin.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,9 +185,8 @@
 		BF4C200126D7012E005B9429 /* ArtableADmin */ = {
 			isa = PBXGroup;
 			children = (
-				BF4C200226D7012E005B9429 /* AppDelegate.swift */,
+				BFB5E04026E2C73900E09BA8 /* Controller */,
 				BF4C200426D7012E005B9429 /* SceneDelegate.swift */,
-				BF4C200626D7012E005B9429 /* ViewController.swift */,
 				BF4C200826D7012E005B9429 /* Main.storyboard */,
 				BF4C200D26D70133005B9429 /* LaunchScreen.storyboard */,
 				BF3774B426D844AD007A6125 /* GoogleService-Info-2.plist */,
@@ -274,6 +282,16 @@
 			path = XIBs;
 			sourceTree = "<group>";
 		};
+		BFB5E04026E2C73900E09BA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C200626D7012E005B9429 /* AdminHomeVC.swift */,
+				BFB5E03E26E2C72C00E09BA8 /* AddEditCategoryVC.swift */,
+				BF4C200226D7012E005B9429 /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB5E03D26E2C60F00E09BA8 /* GoogleService-Info-2.plist in Resources */,
 				BF4C1FF526D700E5005B9429 /* LaunchScreen.storyboard in Resources */,
 				BF9C7C9326DC2B060044EB60 /* ProductCell.xib in Resources */,
 				BF9C7C8626DAF94E0044EB60 /* CategoryCell.xib in Resources */,
@@ -378,6 +397,7 @@
 				BF9C7C9426DC2B060044EB60 /* ProductCell.xib in Resources */,
 				BF3774B526D844AD007A6125 /* GoogleService-Info-2.plist in Resources */,
 				BF4C200A26D7012E005B9429 /* Main.storyboard in Resources */,
+				BFB5E03C26E2C60C00E09BA8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,15 +512,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF4C200726D7012E005B9429 /* ViewController.swift in Sources */,
+				BF4C200726D7012E005B9429 /* AdminHomeVC.swift in Sources */,
+				BFB5E03826E2C4FF00E09BA8 /* RoundedViews.swift in Sources */,
+				BFB5E03726E2C3F000E09BA8 /* HomeVC.swift in Sources */,
 				BF9C7C8E26DC2A4D0044EB60 /* Product.swift in Sources */,
 				BF9C7C8126DAF8920044EB60 /* Category.swift in Sources */,
 				BF4C200326D7012E005B9429 /* AppDelegate.swift in Sources */,
 				BF9C7C7C26DAC08A0044EB60 /* Firebase + Utils.swift in Sources */,
+				BFB5E03F26E2C72C00E09BA8 /* AddEditCategoryVC.swift in Sources */,
 				BF9C7C8B26DC29EC0044EB60 /* ProductsVC.swift in Sources */,
+				BFB5E03A26E2C51A00E09BA8 /* Extensions.swift in Sources */,
 				BF9C7C9226DC2B060044EB60 /* ProductCell.swift in Sources */,
 				BF4C200526D7012E005B9429 /* SceneDelegate.swift in Sources */,
 				BF9C7C8526DAF94E0044EB60 /* CategoryCell.swift in Sources */,
+				BFB5E03926E2C51400E09BA8 /* Constants.swift in Sources */,
+				BFB5E03B26E2C53000E09BA8 /* ProductDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

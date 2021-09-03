@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="ArtableADmin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="O6d-Wu-I8u"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="937.68115942028987" y="53.571428571428569"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ZO-Lh-PIa">
             <objects>
@@ -32,20 +16,178 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LF1-76-KKL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qd9-dZ-GeV"/>
+                        <segue destination="GaB-R3-1GQ" kind="relationship" relationship="rootViewController" id="xf0-eS-GAP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kph-fq-B0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="27.536231884057973" y="53.571428571428569"/>
         </scene>
+        <!--admin-->
+        <scene sceneID="dUy-gF-Ak3">
+            <objects>
+                <viewController id="GaB-R3-1GQ" customClass="AdminHomeVC" customModule="ArtableADmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Dc-dm-QoN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="ihV-ms-bKp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dhA-qV-LUT">
+                                <rect key="frame" x="10" y="88" width="394" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v2j-fR-ZAb">
+                                    <size key="itemSize" width="144" height="194"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Bmb-8T-bkP">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ngl-ny-Bpb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bmb-8T-bkP" firstAttribute="centerY" secondItem="3Dc-dm-QoN" secondAttribute="centerY" id="5H9-Xg-OT5"/>
+                            <constraint firstAttribute="bottom" secondItem="dhA-qV-LUT" secondAttribute="bottom" id="7gy-ng-SF6"/>
+                            <constraint firstItem="dhA-qV-LUT" firstAttribute="top" secondItem="Ngl-ny-Bpb" secondAttribute="top" id="AfF-vx-FQs"/>
+                            <constraint firstItem="ihV-ms-bKp" firstAttribute="top" secondItem="Ngl-ny-Bpb" secondAttribute="top" id="ShK-fQ-E1A"/>
+                            <constraint firstItem="Ngl-ny-Bpb" firstAttribute="trailing" secondItem="ihV-ms-bKp" secondAttribute="trailing" id="TXR-AX-hfF"/>
+                            <constraint firstItem="Bmb-8T-bkP" firstAttribute="centerX" secondItem="3Dc-dm-QoN" secondAttribute="centerX" id="TYh-eP-liv"/>
+                            <constraint firstItem="Ngl-ny-Bpb" firstAttribute="trailing" secondItem="dhA-qV-LUT" secondAttribute="trailing" constant="10" id="Zwx-GQ-fj4"/>
+                            <constraint firstItem="ihV-ms-bKp" firstAttribute="leading" secondItem="Ngl-ny-Bpb" secondAttribute="leading" id="fhQ-9H-NGL"/>
+                            <constraint firstItem="dhA-qV-LUT" firstAttribute="leading" secondItem="Ngl-ny-Bpb" secondAttribute="leading" constant="10" id="gT8-wn-6t0"/>
+                            <constraint firstAttribute="bottom" secondItem="ihV-ms-bKp" secondAttribute="bottom" id="wGz-WS-yo8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="admin" id="RU9-1Y-KrZ">
+                        <barButtonItem key="leftBarButtonItem" title="Login" id="WWI-dw-d8J">
+                            <connections>
+                                <action selector="loginOutClicked:" destination="GaB-R3-1GQ" id="dJt-l7-2pM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Bmb-8T-bkP" id="dUs-Ra-FO1"/>
+                        <outlet property="collectionView" destination="dhA-qV-LUT" id="t8s-VG-d58"/>
+                        <outlet property="loginOutBtn" destination="WWI-dw-d8J" id="8nm-Z0-Zl0"/>
+                        <segue destination="jYD-lE-uyM" kind="show" identifier="ToAddEditCategory" id="ArM-xm-yVz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJS-ig-czj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="54"/>
+        </scene>
+        <!--Add Edit CategoryVC-->
+        <scene sceneID="gNK-hO-Fv7">
+            <objects>
+                <viewController id="jYD-lE-uyM" customClass="AddEditCategoryVC" customModule="ArtableADmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fWY-Jm-g3W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZM-iU-iXz">
+                                <rect key="frame" x="144" y="108" width="126" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17Y-ao-3dx">
+                                <rect key="frame" x="20" y="142.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap image to add category image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3D-Mc-Zob">
+                                <rect key="frame" x="20" y="196.5" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="bZR-ZT-Gn3">
+                                <rect key="frame" x="107" y="236" width="200" height="250"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9Y8-rZ-wgH"/>
+                                    <constraint firstAttribute="height" constant="250" id="eIe-uW-k4L"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9p-gL-7EG" customClass="RoundedButton" customModule="ArtableADmin" customModuleProvider="target">
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="THy-hv-AV9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <state key="normal" title="Add Category">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCategoryClicked:" destination="jYD-lE-uyM" eventType="touchUpInside" id="zDl-yy-lLR"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EwC-0a-hu4">
+                                <rect key="frame" x="188.5" y="506" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EAz-bJ-a2a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EAz-bJ-a2a" firstAttribute="trailing" secondItem="O9p-gL-7EG" secondAttribute="trailing" constant="20" id="1OV-VI-B3P"/>
+                            <constraint firstItem="jZM-iU-iXz" firstAttribute="centerX" secondItem="fWY-Jm-g3W" secondAttribute="centerX" id="5Xw-OF-zzt"/>
+                            <constraint firstItem="EAz-bJ-a2a" firstAttribute="bottom" secondItem="O9p-gL-7EG" secondAttribute="bottom" constant="20" id="8lE-Q0-efc"/>
+                            <constraint firstItem="i3D-Mc-Zob" firstAttribute="top" secondItem="17Y-ao-3dx" secondAttribute="bottom" constant="20" id="ARb-MQ-JEo"/>
+                            <constraint firstItem="EwC-0a-hu4" firstAttribute="top" secondItem="bZR-ZT-Gn3" secondAttribute="bottom" constant="20" id="Io9-Pt-g7B"/>
+                            <constraint firstItem="EwC-0a-hu4" firstAttribute="centerX" secondItem="fWY-Jm-g3W" secondAttribute="centerX" id="Iw5-NG-Dbf"/>
+                            <constraint firstItem="bZR-ZT-Gn3" firstAttribute="top" secondItem="i3D-Mc-Zob" secondAttribute="bottom" constant="20" id="IzL-3W-g44"/>
+                            <constraint firstItem="bZR-ZT-Gn3" firstAttribute="centerX" secondItem="fWY-Jm-g3W" secondAttribute="centerX" id="PiN-LY-XWf"/>
+                            <constraint firstItem="17Y-ao-3dx" firstAttribute="top" secondItem="jZM-iU-iXz" secondAttribute="bottom" constant="12" id="Rsl-8h-fz4"/>
+                            <constraint firstItem="O9p-gL-7EG" firstAttribute="leading" secondItem="EAz-bJ-a2a" secondAttribute="leading" constant="20" id="Vcg-T7-K5k"/>
+                            <constraint firstItem="jZM-iU-iXz" firstAttribute="top" secondItem="EAz-bJ-a2a" secondAttribute="top" constant="20" id="Yll-O0-fWu"/>
+                            <constraint firstItem="EAz-bJ-a2a" firstAttribute="trailing" secondItem="i3D-Mc-Zob" secondAttribute="trailing" constant="20" id="dIx-8g-4Wc"/>
+                            <constraint firstItem="i3D-Mc-Zob" firstAttribute="leading" secondItem="EAz-bJ-a2a" secondAttribute="leading" constant="20" id="hbX-oC-Oe6"/>
+                            <constraint firstItem="17Y-ao-3dx" firstAttribute="leading" secondItem="EAz-bJ-a2a" secondAttribute="leading" constant="20" id="oKt-Bd-rnh"/>
+                            <constraint firstItem="EAz-bJ-a2a" firstAttribute="trailing" secondItem="17Y-ao-3dx" secondAttribute="trailing" constant="20" id="rln-e4-s5J"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kuc-SD-esv"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="EwC-0a-hu4" id="cDq-af-Qc9"/>
+                        <outlet property="categoryImg" destination="bZR-ZT-Gn3" id="keU-jK-8VI"/>
+                        <outlet property="nameTxt" destination="17Y-ao-3dx" id="GS1-lJ-bPZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ye8-QP-zYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="54"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bg_cat3" width="1500" height="1875"/>
+        <image name="camera" width="66" height="54"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
