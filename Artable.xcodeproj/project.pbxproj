@@ -57,6 +57,8 @@
 		BFB5E03C26E2C60C00E09BA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3774B226D839B7007A6125 /* GoogleService-Info.plist */; };
 		BFB5E03D26E2C60F00E09BA8 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3774B426D844AD007A6125 /* GoogleService-Info-2.plist */; };
 		BFB5E03F26E2C72C00E09BA8 /* AddEditCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E03E26E2C72C00E09BA8 /* AddEditCategoryVC.swift */; };
+		BFB5E04226E40DC900E09BA8 /* AdminProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E04126E40DC900E09BA8 /* AdminProductsVC.swift */; };
+		BFB5E04426E410E500E09BA8 /* AddEditProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E04326E410E500E09BA8 /* AddEditProductsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		BFB5E03326E15FBE00E09BA8 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		BFB5E03426E15FBE00E09BA8 /* ProductDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailVC.xib; sourceTree = "<group>"; };
 		BFB5E03E26E2C72C00E09BA8 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
+		BFB5E04126E40DC900E09BA8 /* AdminProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductsVC.swift; sourceTree = "<group>"; };
+		BFB5E04326E410E500E09BA8 /* AddEditProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProductsVC.swift; sourceTree = "<group>"; };
 		D0F169002CBAEF4219E12F7F /* Pods_Artable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D323923EC0F3595123EB2B10 /* Pods-Artable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.debug.xcconfig"; path = "Target Support Files/Pods-Artable/Pods-Artable.debug.xcconfig"; sourceTree = "<group>"; };
 		F8011DAB25BA7A3D6A2AB798 /* Pods-ArtableADmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableADmin.release.xcconfig"; path = "Target Support Files/Pods-ArtableADmin/Pods-ArtableADmin.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,7 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				BF4C200626D7012E005B9429 /* AdminHomeVC.swift */,
+				BFB5E04126E40DC900E09BA8 /* AdminProductsVC.swift */,
 				BFB5E03E26E2C72C00E09BA8 /* AddEditCategoryVC.swift */,
+				BFB5E04326E410E500E09BA8 /* AddEditProductsVC.swift */,
 				BF4C200226D7012E005B9429 /* AppDelegate.swift */,
 			);
 			path = Controller;
@@ -518,6 +524,8 @@
 				BF9C7C8E26DC2A4D0044EB60 /* Product.swift in Sources */,
 				BF9C7C8126DAF8920044EB60 /* Category.swift in Sources */,
 				BF4C200326D7012E005B9429 /* AppDelegate.swift in Sources */,
+				BFB5E04426E410E500E09BA8 /* AddEditProductsVC.swift in Sources */,
+				BFB5E04226E40DC900E09BA8 /* AdminProductsVC.swift in Sources */,
 				BF9C7C7C26DAC08A0044EB60 /* Firebase + Utils.swift in Sources */,
 				BFB5E03F26E2C72C00E09BA8 /* AddEditCategoryVC.swift in Sources */,
 				BF9C7C8B26DC29EC0044EB60 /* ProductsVC.swift in Sources */,

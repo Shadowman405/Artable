@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseFirestore
 
 class AddEditCategoryVC: UIViewController {
     
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var categoryImg: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var categoryToEdit: Category?
     
 
     override func viewDidLoad() {
@@ -29,6 +33,70 @@ class AddEditCategoryVC: UIViewController {
     
 
     @IBAction func addCategoryClicked(_ sender: Any) {
+        activityIndicator.startAnimating()
+        uploadImageThenDocument()
+    }
+    
+    func uploadImageThenDocument() {
+        guard let image = categoryImg.image , let categoryName = nameTxt.text , categoryName.isNotEmpty else {
+            simpleAlert(title: "Error", message: "Must add category image and name")
+            return
+        }
+        
+        //Turn the img into data
+        guard let imageData = image.jpegData(compressionQuality: 0.2) else {return}
+        
+        //Create storage img ref -< location in firestore for it ti be store
+        let imageRef = Storage.storage().reference().child("/categoryImages/\(categoryName).jpg")
+        
+        //Set the metadata
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        //Upload data
+        imageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if let error = error {
+                self.handleError(error: error, message: "Unable to upload image")
+                return
+            }
+            // When img uploaded , retrieve download URL
+            imageRef.downloadURL { url, error in
+                if let error = error {
+                    self.handleError(error: error, message: "Unable to retrieve url for image")
+                    return
+                }
+                
+                guard let url = url else {return}
+                print(url)
+                //Upload new Category document to Firestore DB
+                self.uploadDocument(url: url.absoluteString)
+            }
+        }
+    }
+    
+    func uploadDocument(url: String) {
+        var docRef: DocumentReference!
+        var category = Category.init(name: nameTxt.text!,
+                                     id: "",
+                                     imgURL: url,
+                                     timeStamp: Timestamp())
+        docRef = Firestore.firestore().collection("categories").document()
+        category.id = docRef.documentID
+        
+        let data = Category.modelToData(category: category)
+        docRef.setData(data, merge: true) { error in
+            if let error = error {
+                self.handleError(error: error, message: "Unable to upload new category to Database")
+                return
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func handleError(error: Error, message: String){
+        debugPrint(error.localizedDescription)
+        self.simpleAlert(title: "Error", message: message)
+        self.activityIndicator.stopAnimating()
     }
 }
 

@@ -90,6 +90,7 @@
                         <outlet property="collectionView" destination="dhA-qV-LUT" id="t8s-VG-d58"/>
                         <outlet property="loginOutBtn" destination="WWI-dw-d8J" id="8nm-Z0-Zl0"/>
                         <segue destination="jYD-lE-uyM" kind="show" identifier="ToAddEditCategory" id="ArM-xm-yVz"/>
+                        <segue destination="OdK-WF-6gh" kind="show" identifier="toProductsVC" id="kB8-cg-XB3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJS-ig-czj" sceneMemberID="firstResponder"/>
@@ -145,7 +146,8 @@
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EwC-0a-hu4">
                                 <rect key="frame" x="188.5" y="506" width="37" height="37"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EAz-bJ-a2a"/>
@@ -179,7 +181,66 @@
             </objects>
             <point key="canvasLocation" x="1813" y="54"/>
         </scene>
+        <!--Admin ProductsVC-->
+        <scene sceneID="kp0-7p-Bra">
+            <objects>
+                <viewController id="OdK-WF-6gh" customClass="AdminProductsVC" customModule="ArtableADmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cdF-Z7-otS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="4T2-25-Fxj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSH-pZ-1Iy">
+                                <rect key="frame" x="2" y="88" width="410" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iXS-wE-6TP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iXS-wE-6TP" firstAttribute="trailing" secondItem="bSH-pZ-1Iy" secondAttribute="trailing" constant="2" id="04D-a9-OZl"/>
+                            <constraint firstItem="bSH-pZ-1Iy" firstAttribute="top" secondItem="iXS-wE-6TP" secondAttribute="top" id="CAI-xg-Ms1"/>
+                            <constraint firstAttribute="bottom" secondItem="bSH-pZ-1Iy" secondAttribute="bottom" id="FGG-ub-E7V"/>
+                            <constraint firstItem="4T2-25-Fxj" firstAttribute="leading" secondItem="iXS-wE-6TP" secondAttribute="leading" id="H6I-hy-wN2"/>
+                            <constraint firstItem="4T2-25-Fxj" firstAttribute="trailing" secondItem="iXS-wE-6TP" secondAttribute="trailing" id="SGx-4v-gQM"/>
+                            <constraint firstItem="4T2-25-Fxj" firstAttribute="top" secondItem="iXS-wE-6TP" secondAttribute="top" id="W0H-i7-wzD"/>
+                            <constraint firstItem="bSH-pZ-1Iy" firstAttribute="leading" secondItem="iXS-wE-6TP" secondAttribute="leading" constant="2" id="wEr-hJ-7Q1"/>
+                            <constraint firstAttribute="bottom" secondItem="4T2-25-Fxj" secondAttribute="bottom" id="zeY-My-udf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mGZ-go-Gp4"/>
+                    <connections>
+                        <outlet property="tableView" destination="bSH-pZ-1Iy" id="hZf-d5-dn5"/>
+                        <segue destination="A2X-ub-Gg4" kind="show" identifier="toAddEditProduct" id="W43-gR-jjt"/>
+                        <segue destination="jYD-lE-uyM" kind="show" identifier="toEditCategory" id="OIO-uP-LpA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLp-Kl-saj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="848"/>
+        </scene>
+        <!--Add Edit ProductsVC-->
+        <scene sceneID="oVL-F5-53q">
+            <objects>
+                <viewController id="A2X-ub-Gg4" customClass="AddEditProductsVC" customModule="ArtableADmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eAb-Dt-dBo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Loa-qJ-MbB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cM3-AJ-uqV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Fh-1c-Yul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="851"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OIO-uP-LpA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bg_cat3" width="1500" height="1875"/>
         <image name="camera" width="66" height="54"/>
