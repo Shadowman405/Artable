@@ -67,9 +67,22 @@ class RegisterVC: UIViewController {
         
         activitiIndicator.startAnimating()
         
+//        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+//            if let error = error {
+//                debugPrint(error)
+//                Auth.auth().handleFireAuthError(error: error, vc: self)
+//                return
+//            }
+//
+//            guard let fireUser = result?.user else {return}
+//            let artUser = User(id: fireUser.uid, email: email, username: username, stripeId: "")
+//            //Upload to FS
+//            self.createFirestoreUser(user: artUser)
+//        }
+        
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
         guard let authUser = Auth.auth().currentUser else {return}
-        
+
         authUser.link(with: credential) { result, error in
             if let error = error {
                 debugPrint(error)
@@ -77,8 +90,26 @@ class RegisterVC: UIViewController {
                 return
             }
             
+            guard let fireUser = result?.user else {return}
+            let artUser = User(id: fireUser.uid, email: email, username: username, stripeId: "")
+            //Upload to FS
+            self.createFirestoreUser(user: artUser)
+
+        }
+    }
+    
+    func createFirestoreUser(user: User) {
+        let newUserRef = Firestore.firestore().collection("users").document(user.id)
+        let data = User.modelToData(user: user)
+        newUserRef.setData(data) { error in
+            if let error = error {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint("Error signing in: \(error.localizedDescription)")
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
             self.activitiIndicator.stopAnimating()
-            self.dismiss(animated: true, completion: nil)
         }
     }
     

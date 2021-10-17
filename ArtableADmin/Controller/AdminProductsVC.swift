@@ -24,7 +24,7 @@ class AdminProductsVC: ProductsVC {
     }
     
     @objc func newProduct() {
-        performSegue(withIdentifier: Segues.toAddEditCategory, sender: self)
+        performSegue(withIdentifier: Segues.toAddEditProduct, sender: self)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -23,10 +23,12 @@ class ProductsVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: Identifiers.ProductCell, bundle: nil), forCellReuseIdentifier: Identifiers.ProductCell)
+        
+        setupQuery()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupQuery()
+        //setupQuery()
     }
     
     func setupQuery() {

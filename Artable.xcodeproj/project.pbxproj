@@ -24,6 +24,8 @@
 		BF4C200F26D70133005B9429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C200D26D70133005B9429 /* LaunchScreen.storyboard */; };
 		BF4C201526D7018F005B9429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4C1FF126D700E5005B9429 /* Assets.xcassets */; };
 		BF4C201726D70407005B9429 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C201626D70407005B9429 /* LoginStoryboard.storyboard */; };
+		BF7DF87A271CC63E00461D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DF879271CC63E00461D11 /* User.swift */; };
+		BF7DF87B271CC63F00461D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DF879271CC63E00461D11 /* User.swift */; };
 		BF9C7C6A26D93DC10044EB60 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C6926D93DC10044EB60 /* LoginVC.swift */; };
 		BF9C7C6C26D93DDC0044EB60 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C6B26D93DDC0044EB60 /* RegisterVC.swift */; };
 		BF9C7C6F26D9971E0044EB60 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C7C6E26D9971E0044EB60 /* Extensions.swift */; };
@@ -83,6 +85,7 @@
 		BF4C200E26D70133005B9429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF4C201026D70133005B9429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4C201626D70407005B9429 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		BF7DF879271CC63E00461D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF9C7C6926D93DC10044EB60 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BF9C7C6B26D93DDC0044EB60 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		BF9C7C6E26D9971E0044EB60 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -235,6 +238,7 @@
 			children = (
 				BF9C7C7F26DAF8920044EB60 /* Category.swift */,
 				BF9C7C8C26DC2A4D0044EB60 /* Product.swift */,
+				BF7DF879271CC63E00461D11 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +506,7 @@
 				BF9C7C7426D99E450044EB60 /* RoundedViews.swift in Sources */,
 				BF9C7C8A26DC29E20044EB60 /* ProductsVC.swift in Sources */,
 				BF9C7C7826DAB7070044EB60 /* ForgotPasswordVC.swift in Sources */,
+				BF7DF87A271CC63E00461D11 /* User.swift in Sources */,
 				BF9C7C7126D99BAF0044EB60 /* Constants.swift in Sources */,
 				BF9C7C6A26D93DC10044EB60 /* LoginVC.swift in Sources */,
 				BF9C7C7B26DABFBE0044EB60 /* Firebase + Utils.swift in Sources */,
@@ -532,6 +537,7 @@
 				BFB5E03A26E2C51A00E09BA8 /* Extensions.swift in Sources */,
 				BF9C7C9226DC2B060044EB60 /* ProductCell.swift in Sources */,
 				BF4C200526D7012E005B9429 /* SceneDelegate.swift in Sources */,
+				BF7DF87B271CC63F00461D11 /* User.swift in Sources */,
 				BF9C7C8526DAF94E0044EB60 /* CategoryCell.swift in Sources */,
 				BFB5E03926E2C51400E09BA8 /* Constants.swift in Sources */,
 				BFB5E03B26E2C53000E09BA8 /* ProductDetailVC.swift in Sources */,
